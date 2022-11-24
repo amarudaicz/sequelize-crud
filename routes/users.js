@@ -1,14 +1,14 @@
 
 const express = require('express'); //REQUERIMOS EXPRES PARA MODER ACCEDER A SU FUNCIONALIDAD.
-const router = express.Router(); //INSTANCIAMOS LA VARIABLE ROUTER PARA PODER HACER LAS RUTAS MAS DINAMICAS Y MODULARES.(esta forma nos permite poder llamar a las rutas desde app.js)
+const router = express.Router(); //INSTANCIAMOS LA VARIABLE ROUTER PARA PODER HACER LAS RUTAS MAS DINAMICAS Y MODULARES.(hacer esto nos permite poder llamar a las rutas desde app.js)
 
 const userModel = require('../models').users //REQUERIMOS EL MODELO DE USERS PARA ACCEDER A SUS FUNCIONES Y PODER MANEJAR LA DB
 
 
 
 //RUTA PARA OBTENER TODOS LOS USERS
-router.get('/users/get-all', async (req, res )=>{
-
+router.get('/get-all', async (req, res )=>{
+    
     const users = await userModel.findAll({}) //OBTENEMOS TODOS LOS REGISTROS DE LA DB CON LA FUNCION findAll() de userModel
 
     res.send(users)//RESPONDEMOS CON TODOS LOS USERS DE LA TABLA
@@ -16,8 +16,9 @@ router.get('/users/get-all', async (req, res )=>{
 })
 
 
+
 //RUTA PARA UN SOLO USER PASANDO POR PARAMS(URL) EL ID
-router.get('/users/get-one/:id', async (req, res )=>{
+router.get('/get-one/:id', async (req, res ) => {
 
     try {
     
@@ -41,7 +42,7 @@ router.get('/users/get-one/:id', async (req, res )=>{
 
 
 //RUTA PARA INSERTAR UN USUARIO
-router.post('/users/post-one', async (req, res )=>{
+router.post('/post-one', async (req, res )=>{
 
     try {
         const {name, email, password} = req.body //EXTRAEMOS DE req.body => name, email, password(usando metodo destructuring) QUE SON LOS DATOS QUE DEBEMOS ENVIAR DESDE EL FRONT SEA CON UN FORMULARIO O DE OTRAS MANERAS.(usamos postman o insomnia para simular este proceso)
@@ -59,7 +60,7 @@ router.post('/users/post-one', async (req, res )=>{
 
 
 //RUTA PARA ELIMINAR UN USUARIO
-router.delete('/users/delete-one/:id', async (req, res )=>{
+router.delete('/delete-one/:id', async (req, res )=>{
 
     try {
         const {id} = req.params //EXTRAEMOS DE LA REQUEST EL ID QUE VIENE EN EL URL (usando metodo destructuring)
@@ -81,7 +82,7 @@ router.delete('/users/delete-one/:id', async (req, res )=>{
 
 
 //RUTA PARA ACTUALIZAR UN USUARIO
-router.put('/users/update-one/:id', async (req, res )=>{
+router.put('/update-one/:id', async (req, res )=>{
 
     try {
         const {id} = req.params //EXTRAEMOS DE LA REQUEST EL ID QUE VIENE EN EL URL (usando metodo destructuring)
