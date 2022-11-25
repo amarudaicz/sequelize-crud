@@ -1,12 +1,13 @@
 {
   "development": {
-    "username": "id19910010_amarudaicz",
-    "password": "WXw*CUULd]6eWVH=",
-    "database": "id19910010_owshoes",
-    "host": "localhost",
+    "username": "root",
+    "password": "45iyDobrzKqnetXltjIV",
+    "database": "railway",
+    "host": "containers-us-west-126.railway.app",
+    "port":6474,
     "dialect": "mysql"
   },
-
+  
   "test": {
     "username": "root",
     "password": null,
