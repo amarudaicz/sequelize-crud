@@ -5,20 +5,19 @@ const router = express.Router(); //INSTANCIAMOS LA VARIABLE ROUTER PARA PODER HA
 
 
 
-router.get('/', (req, res )=>{
-
-    res.send('gato')
-    
-})
 
 
 
 
 
 
+router.get('/', (req, res) => {
+  res.json({
+    name: 'Amaru',
+    lastname: 'Daicz',
+    rol: 'user',
+  });
+});
 
 
-
-
-
-module.exports = router
+module.exports = router;
