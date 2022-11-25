@@ -10,8 +10,9 @@ app.use(bodyParser.json())
 // app.use('/users', require('./routes/users'));
 app.use('/login', require('./routes/login'));
 
+const port = process.env.PORT || 4000
 
-
-app.listen(3080, () => {
+app.listen(port, () => {
     console.log('app on');
 })
+ 
