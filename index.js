@@ -5,9 +5,18 @@ const bodyParser = require('body-parser')
 const app = express()
 
 app.use(bodyParser.json())
+app.set('view engine', 'ejs')
+app.set('views', __dirname + "/views")
 
 
 // app.use('/users', require('./routes/users'));
+app.get('/home', (req, res)=>{
+    
+    res.render('index', {
+        names:['amaru', 'agus']
+    })
+})
+
 app.use('/login', require('./routes/login'));
 
 const port = process.env.PORT || 4000
