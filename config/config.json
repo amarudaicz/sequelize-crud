@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "test",
-    "host": "127.0.0.1",
+    "username": "id19910010_amarudaicz",
+    "password": "WXw*CUULd]6eWVH=",
+    "database": "id19910010_owshoes",
+    "host": "localhost",
     "dialect": "mysql"
   },
 
