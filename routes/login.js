@@ -20,4 +20,11 @@ router.get('/', (req, res) => {
 });
 
 
+
+router.get('/data', (req, res) => {
+  res.json(process.env.DB_NAME);
+});
+
+
+
 module.exports = router;
