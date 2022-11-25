@@ -10,11 +10,13 @@
 
     <h1>HELLO NARXISTAS</h1>
 
-    <button onclick="addDog()">Click me!</button>
+    <button onclick="addDog(event)">Click me!</button>
 
     
     <script>
         function addDog(event) {
+            console.log(event);
+            
             event.target.insertAdjacentHtml('beforeend', '<h1>asdsa</h1>')
             
 
