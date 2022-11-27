@@ -1,6 +1,6 @@
 const express = require('express'); //REQUERIMOS EXPRES PARA MODER ACCEDER A SU FUNCIONALIDAD.
 const router = express.Router(); //INSTANCIAMOS LA VARIABLE ROUTER PARA PODER HACER LAS RUTAS MAS DINAMICAS Y MODULARES.(hacer esto nos permite poder llamar a las rutas desde app.js)
-const request = require('request');
+const userModel = require('../models').users
 
 
 
@@ -10,13 +10,16 @@ const request = require('request');
 
 
 
+router.get('/', async (req, res) => {
 
-router.get('/', (req, res) => {
-  res.json({
+ const newUser = await userModel.create({
     name: 'Amaru',
-    lastname: 'Daicz',
-    rol: 'user',
+    email: 'Daicz@gmail.com',
+    password: 'asddsa',
   });
+  
+  res.send(newUser)
+
 });
 
 
