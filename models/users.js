@@ -15,18 +15,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   
-  users.init({
-    id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true} ,
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    role:DataTypes.STRING
-  },
-  {
-    sequelize,
-    modelName: 'users',
-  });
+  users.init(
+    {
+      id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true} ,
+      name: DataTypes.STRING,
+      email: DataTypes.STRING,
+      password: DataTypes.STRING,
+      age: DataTypes.INTEGER,
+      role:DataTypes.STRING
+    },
+    {
+      sequelize,
+      modelName: 'users',
+      
+    }
+  );
 
   return users;
-};
+}; 

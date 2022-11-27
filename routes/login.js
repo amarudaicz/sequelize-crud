@@ -13,6 +13,7 @@ const userModel = require('../models').users
 router.get('/', async (req, res) => {
 
  const newUser = await userModel.create({
+    id:2,
     name: 'Amaru',
     email: 'Daicz@gmail.com',
     role:'user',
@@ -23,7 +24,7 @@ router.get('/', async (req, res) => {
   res.send(newUser)
 
 });
-
+ 
 
 
 router.get('/data', (req, res) => {
