@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
  const newUser = await userModel.create({
     name: 'Amaru',
     email: 'Daicz@gmail.com',
-    password: 'asddsa',
+    role:'user',
+    password:'usasder',
+    age: 12,
   });
   
   res.send(newUser)
