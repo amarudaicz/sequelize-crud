@@ -1,14 +1,7 @@
 const express = require('express'); //REQUERIMOS EXPRES PARA MODER ACCEDER A SU FUNCIONALIDAD.
 const router = express.Router(); //INSTANCIAMOS LA VARIABLE ROUTER PARA PODER HACER LAS RUTAS MAS DINAMICAS Y MODULARES.(hacer esto nos permite poder llamar a las rutas desde app.js)
-try {
-  const userModel = require('../models').users
+const userModel = require('../models').users
   
-} catch (err) {
-  console.log(err);
-  
-}
-
-
 
 
 
@@ -26,7 +19,7 @@ router.get('/', async (req, res) => {
     res.send(newUser)
     
   } catch (err) {
-    res.send(err)
+    res.send({error:"error en login"})
   }
 
 });
